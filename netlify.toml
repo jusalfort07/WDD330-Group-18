@@ -1,2 +1,2 @@
 [functions]
-  included_files = ["all/channels.json"]
+  included_files = ["json/tents.json"]
