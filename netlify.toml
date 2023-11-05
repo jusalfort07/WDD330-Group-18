@@ -1,3 +1,4 @@
-[functions]
-  directory = "functions"
-  included_files = ["json/tents.json"]
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
