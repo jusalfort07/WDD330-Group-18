@@ -33,3 +33,11 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+
+// NEW FUNCTION FOR WEEK 2 GROUP ASSIGNMENT:
+ export function getParams(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+  return product;
+ }
