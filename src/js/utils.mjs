@@ -34,10 +34,21 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-// NEW FUNCTION FOR WEEK 2 GROUP ASSIGNMENT:
- export function getParams(param) {
+// W02 Team Activity Function
+export function getParams(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product;
- }
+}
+
+// W02 Individual Activity Function
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = "false"){
+  const htmlStrings = list.map(templateFn);
+
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
