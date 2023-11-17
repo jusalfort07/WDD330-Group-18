@@ -52,3 +52,30 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
 
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
+
+
+// W3 GROUP ACTIVITY 
+export function renderWithTemplate(template, parentElement, data, callback,  position = "afterbegin"){
+  parentElement.insertAdjacentHTML(position, template);
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+export async function loadTemplate(path) {
+  const html = await fetch(path);
+  const template = await html.text();
+  return template;
+} 
+
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("../partials/header.html")
+  const footerTemplate = await loadTemplate("../partials/footer.html")
+
+  const headerElement = document.querySelector("#header");
+  const footerElement = document.querySelector("#footer");
+
+  renderWithTemplate(headerTemplate, headerElement);
+  renderWithTemplate(footerTemplate, footerElement);
+}
