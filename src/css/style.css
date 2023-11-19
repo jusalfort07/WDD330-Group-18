@@ -231,3 +231,9 @@ footer {
 .category img {
   width: 50%;
 }
+
+/* Styling for any element with the class hide */
+
+.hide {
+  display: none;
+}
