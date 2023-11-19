@@ -30,4 +30,24 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
+function cartTotal(){
+  const element = document.querySelector(".product-list");
+  const checkElement = element.hasChildNodes();
+  const cartItems = getLocalStorage("so-cart");
+  var total = 0;
+
+  if(checkElement == true){
+    document.querySelector(".cart-footer").classList.remove("hide")
+    cartItems.forEach((item) => {
+      total += item.FinalPrice
+
+    })
+    document.querySelector(".cart-total").innerHTML = "Total: " + total;
+  } else {
+    document.querySelector(".cart-footer").classList.add("hide");
+  }
+}
+
+cartTotal()
+
 renderCartContents();
