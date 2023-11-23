@@ -15,7 +15,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${item.Images.PrimarySmall}"
       alt="${item.Name}"
     />
   </a>
@@ -31,12 +31,12 @@ function cartItemTemplate(item) {
 }
 
 function cartTotal(){
-  const element = document.querySelector(".product-list");
-  const checkElement = element.hasChildNodes();
+  // const element = document.querySelector(".product-list");
+  // const checkElement = element.hasChildNodes();
   const cartItems = getLocalStorage("so-cart");
   var total = 0;
 
-  if(checkElement == true){
+  if(cartItems != null){
     document.querySelector(".cart-footer").classList.remove("hide")
     cartItems.forEach((item) => {
       total += item.FinalPrice
