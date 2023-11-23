@@ -8,8 +8,8 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="../js/checkout.js" type="module"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/checkout.js" type="module"></script>
   </head>
 
   <body>
@@ -21,6 +21,63 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
+
+      <div class="checkoutContainer">
+        <form name="checkout">
+          <div class="mainForm">
+            <h2>Customer Name</h2>
+            <div>
+              <label for="fname">First Name: </label>
+              <input type="text" name="fname" id="fname" required> <br>
+            
+              <label for="lname">Last Name:</label>
+              <input type="text" name="lname" id="lname" required> <br>
+            </div>
+          
+            <h2>Customer Address</h2>
+            <div>
+              <label for="street">Street Address:</label>
+              <input type="text" name="street" id="street"> <br>
+            
+              <label for="city">City:</label>
+              <input type="text" name="city" id="city"> <br>
+            
+              <label for="state">State:</label>
+              <input type="text" name="state" id="state"> <br>
+            
+              <label for="zip">Zip Code:</label>
+              <input type="number" name="zip" id="zip"> <br>
+            </div>
+          
+            <h2>Payment Information:</h2>
+            <div>
+              <label for="cardNumber">Credit Card Number</label>
+              <input type="number" name="cardNumber" id="cardNumber" value="1234123412341234"> <br>
+            
+              <label for="expiration">Expiration Date:</label>
+              <input type="text" name="expiration" id="expiration" value="08/26"> <br>
+            
+              <label for="code">Security Code:</label>
+              <input type="number" name="code" id="code" value="123"> <br>
+            </div>
+          </div>
+
+          <div class="orderSummary">
+            <h2>Order Summary</h2>
+            <p class="subtotal">Subtotal: (<span id="num-items"></span>)</p>
+            <p  class="shippingEstimate" >Shipping Estimate:</p>
+            <input type="hidden" name="shipping" id="shipping">
+            <p class="tax">Tax:</p>
+            <input type="hidden" name="tax" id="tax">
+            <p class="orderTotal">Order Total:</p>
+            <input type="hidden" name="orderTotal" id="orderTotal">
+          </div>
+
+          <button type="submit" id="checkoutSubmit">Place Order</button>
+
+        </form>
+      </div>
+      
     </main>
 
     <footer id="footer"></footer>

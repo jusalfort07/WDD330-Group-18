@@ -237,3 +237,29 @@ footer {
 .hide {
   display: none;
 }
+
+/* Form Styling */
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+form .mainForm div label{
+  display: inline-block;
+  width: 40%;
+}
+
+.mainForm, .orderSummary{
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.mainForm h2, .orderSummary h2{
+  text-align: center;
+}
+
+form button{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
