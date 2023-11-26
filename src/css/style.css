@@ -263,3 +263,23 @@ form button{
   grid-column-start: 1;
   grid-column-end: 3;
 }
+
+/* Alert Message Styling */
+
+.alert p, .alert span {
+  display: flex;
+  background-color: red;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 50%;
+}
+
+.alert p {
+  float: left;
+}
+
+.alert span {
+  justify-content: right;
+  float: right;
+}
