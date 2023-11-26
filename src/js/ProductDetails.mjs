@@ -1,5 +1,6 @@
 import { setLocalStorage, alertMessage } from "./utils.mjs";
 function productDetailsTemplate(product) {
+  var discount = product.SuggestedRetailPrice - product.FinalPrice;
   return `<section class="product-detail"> <h3>${product.Brand.Name}</h3>
     <h2 class="divider">${product.NameWithoutBrand}</h2>
     <img
@@ -7,7 +8,9 @@ function productDetailsTemplate(product) {
       src="${product.Images.PrimaryExtraLarge}"
       alt="${product.NameWithoutBrand}"
     />
-    <p class="product-card__price">$${product.FinalPrice}</p>
+    <p class="product-srp">Suggested Retail Price: $${product.SuggestedRetailPrice}</p>
+    <p class="product-discount">Discount: $${discount.toFixed(2)}</p>
+    <p class="product-card__price">Final Price: $${product.FinalPrice}</p>
     <p class="product__color">${product.Colors[0].ColorName}</p>
     <p class="product__description">
     ${product.DescriptionHtmlSimple}
@@ -26,6 +29,7 @@ export default class ProductDetails {
     async init() {
       this.product = await this.dataSource.findProductById(this.productId);
       this.renderProductDetails("main");
+
       
       document
         .getElementById("addToCart")
